@@ -72,7 +72,7 @@ fullscreenButton.addEventListener("click", () => {
         } else if (appContainer.msRequestFullscreen) {
             appContainer.msRequestFullscreen();
         }
-        fullscreenButton.textContent = "❌"; // Update button to indicate exit
+        fullscreenButton.textContent = "X"; // Update button to indicate exit
     } else {
         // Exit fullscreen
         if (document.exitFullscreen) {
