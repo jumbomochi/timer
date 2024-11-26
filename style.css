@@ -1,7 +1,8 @@
 /* General Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -13,7 +14,7 @@ body {
 /* Container Styling */
 .container {
     text-align: center;
-    background: white;
+    /* background: white; */
     padding: 40px 20px; /* Increased padding for a balanced look */
     border-radius: 15px; /* Slightly larger radius for smoother corners */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
@@ -93,6 +94,22 @@ button:hover {
 
     .timer-display {
         font-size: 6rem; /* Smaller timer font for smaller screens */
-        height: 40vh; /* Reduce height on smaller screens */
+        height: 30vh; /* Reduce height on smaller screens */
     }
+}
+
+.fullscreen-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.fullscreen-button:hover {
+    color: #007bff;
 }

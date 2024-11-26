@@ -8,6 +8,7 @@ const customMessageInput = document.getElementById("customMessageInput");
 const startButton = document.getElementById("startButton");
 const customMessageElement = document.getElementById("customMessage");
 const timerDisplay = document.getElementById("timerDisplay");
+const fullscreenButton = document.getElementById("fullscreenToggle"); // Reference fullscreen button
 
 let timerInterval;
 let timeRemaining;
@@ -58,3 +59,29 @@ function updateDisplay(seconds) {
         .toString()
         .padStart(2, "0")}:${remainingSeconds.toString().padStart(2, "0")}`;
 }
+
+// Fullscreen Toggle Functionality
+fullscreenButton.addEventListener("click", () => {
+    const appContainer = document.documentElement; // Full page or specific container
+    if (!document.fullscreenElement) {
+        // Enter fullscreen
+        if (appContainer.requestFullscreen) {
+            appContainer.requestFullscreen();
+        } else if (appContainer.webkitRequestFullscreen) {
+            appContainer.webkitRequestFullscreen();
+        } else if (appContainer.msRequestFullscreen) {
+            appContainer.msRequestFullscreen();
+        }
+        fullscreenButton.textContent = "❌"; // Update button to indicate exit
+    } else {
+        // Exit fullscreen
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        fullscreenButton.textContent = "⛶"; // Update button to indicate enter
+    }
+});
