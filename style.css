@@ -14,7 +14,6 @@ body {
 /* Container Styling */
 .container {
     text-align: center;
-    /* background: white; */
     padding: 40px 20px; /* Increased padding for a balanced look */
     border-radius: 15px; /* Slightly larger radius for smoother corners */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
@@ -29,49 +28,118 @@ h1 {
     color: #333;
 }
 
-/* Label Styling */
-.time-picker label,
-.message-input label {
+/* Timer Mode Selector */
+.timer-mode label {
     display: block;
-    margin: 15px 0 5px; /* Improved spacing for readability */
+    margin-bottom: 5px;
     font-weight: bold;
-    font-size: 1rem; /* Consistent label font size */
-    color: #555; /* Softer label color */
+    font-size: 1rem;
+    color: #555;
 }
 
-/* Input Fields */
-.time-picker input,
-.message-input input {
-    padding: 12px; /* Increased padding for larger input areas */
+.timer-mode select {
+    padding: 12px; /* Match input padding */
     font-size: 1rem;
-    margin-bottom: 15px; /* Slightly larger spacing between inputs */
-    border: 1px solid #ccc; /* Subtle border color */
-    border-radius: 8px; /* Rounded corners for input fields */
-    width: 100%;
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ccc;
+    margin-bottom: 15px; /* Match spacing with other inputs */
+    width: 100%; /* Full width for consistency */
+    box-sizing: border-box;
+    background-color: white; /* Clean background */
+    color: #333;
+    appearance: none; /* Remove default styles for consistency */
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="%23333" d="M2 0L0 2h4z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+/* End Time Input Styling */
+#endTimeInputs input[type="time"] {
+    padding: 12px; /* Match input padding */
+    font-size: 1rem;
+    margin-bottom: 15px; /* Match spacing with other inputs */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width for consistency */
     box-sizing: border-box;
 }
 
-/* Buttons */
-button {
-    padding: 12px 20px; /* Larger buttons for accessibility */
-    margin: 10px; /* Increased spacing between buttons */
+/* Group Styling for Duration Inputs */
+.time-picker {
+    display: flex;
+    justify-content: space-between; /* Space out the inputs */
+    gap: 10px; /* Add spacing between input boxes */
+    margin-bottom: 15px; /* Space below the group */
+    width: 100%;
+}
+.time-picker.hidden{
+    display: none;
+}
+
+/* Ensure Consistent Width for All Input Containers */
+#durationInputs, #endTimeInputs {
+    width: 100%; /* Match the width of the container */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.time-picker div {
+    flex: 1; /* Allow equal spacing between inputs */
+}
+
+/* Consistent Styling for Each Input Box */
+.time-picker input {
+    padding: 12px; /* Uniform padding */
     font-size: 1rem;
+    text-align: center; /* Center-align numbers */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Allow flexible widths */
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.time-picker label {
     font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    text-align: center; /* Center-align labels */
+}
+
+/* Input Fields for Message */
+.message-input input {
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width for consistency */
+    box-sizing: border-box;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
     background-color: #28a745;
     color: white;
-    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
-
 /* Timer Display Styling */
 .timer-display {
     font-size: 8rem; /* Large font size for countdown */
     font-weight: bold;
     margin-top: 40px; /* Increased space between message and timer */
     color: #333;
-    height: 30vh; /* Occupy 50% of the screen height */
+    height: 30vh; /* Occupy a portion of the screen height */
     width: 100%; /* Full container width */
     display: flex;
     justify-content: center;
@@ -81,19 +149,7 @@ button {
     background-color: #f8f9fa; /* Subtle background for timer area */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 90%; /* Shrink container on smaller screens */
-        padding: 20px; /* Reduce padding for smaller devices */
-    }
-
-    .timer-display {
-        font-size: 6rem; /* Smaller timer font for smaller screens */
-        height: 30vh; /* Reduce height on smaller screens */
-    }
-}
-
+/* Fullscreen Button Styling */
 .fullscreen-button {
     position: absolute;
     top: 20px;
@@ -109,3 +165,5 @@ button {
 .fullscreen-button:hover {
     color: #007bff;
 }
+
+

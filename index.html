@@ -10,19 +10,33 @@
     <div id="setupScreen" class="container">
         <h1>Set Your Timer</h1>
 
-        <div class="time-picker">
+        <!-- Timer Mode Selector -->
+        <div class="timer-mode">
+            <label for="timerMode">Choose Mode:</label>
+            <select id="timerMode">
+                <option value="duration" selected>Set Duration</option>
+                <option value="end-time">Set End Time</option>
+            </select>
+        </div>
+
+        <!-- Duration Input -->
+        <div id="durationInputs" class="time-picker">
             <label for="hoursInput">Hours:</label>
             <input type="number" id="hoursInput" min="0" max="23" value="0" />
-            
             <label for="minutesInput">Minutes:</label>
             <input type="number" id="minutesInput" min="0" max="59" value="0" />
-            
             <label for="secondsInput">Seconds:</label>
             <input type="number" id="secondsInput" min="0" max="59" value="0" />
         </div>
 
+        <!-- End Time Input -->
+        <div id="endTimeInputs" class ="time-picker" style="display: none;">
+            <label for="endTime">End Time:</label>
+            <input type="time" id="endTime" />
+        </div>
+
         <div class="message-input">
-            <label for="customMessageInput">Custom Message:</label>
+            <label for="customMessageInput"><b>Custom Message:</b></label>
             <input type="text" id="customMessageInput" placeholder="Enter your custom message" />
         </div>
 
@@ -33,7 +47,6 @@
         <h1 id="customMessage"></h1>
         <div class="timer-display" id="timerDisplay">00:00:00</div>
         <button id="fullscreenToggle" class="fullscreen-button" aria-label="Toggle Fullscreen">⛶</button>
-    </button>
     </div>
 
     <script src="script.js"></script>
