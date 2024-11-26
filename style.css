@@ -1,0 +1,98 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0; /* Ensure no body padding affects centering */
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background: white;
+    padding: 40px 20px; /* Increased padding for a balanced look */
+    border-radius: 15px; /* Slightly larger radius for smoother corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    width: 50%;
+    max-width: 600px; /* Ensure container doesn’t grow too large on wide screens */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 4rem; /* Slightly larger font size for headings */
+    margin-bottom: 30px; /* Increased space below the heading */
+    color: #333;
+}
+
+/* Label Styling */
+.time-picker label,
+.message-input label {
+    display: block;
+    margin: 15px 0 5px; /* Improved spacing for readability */
+    font-weight: bold;
+    font-size: 1rem; /* Consistent label font size */
+    color: #555; /* Softer label color */
+}
+
+/* Input Fields */
+.time-picker input,
+.message-input input {
+    padding: 12px; /* Increased padding for larger input areas */
+    font-size: 1rem;
+    margin-bottom: 15px; /* Slightly larger spacing between inputs */
+    border: 1px solid #ccc; /* Subtle border color */
+    border-radius: 8px; /* Rounded corners for input fields */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px; /* Larger buttons for accessibility */
+    margin: 10px; /* Increased spacing between buttons */
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Timer Display Styling */
+.timer-display {
+    font-size: 8rem; /* Large font size for countdown */
+    font-weight: bold;
+    margin-top: 40px; /* Increased space between message and timer */
+    color: #333;
+    height: 30vh; /* Occupy 50% of the screen height */
+    width: 100%; /* Full container width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ddd; /* Optional border for timer box */
+    border-radius: 12px; /* Rounded corners for timer display */
+    background-color: #f8f9fa; /* Subtle background for timer area */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Shrink container on smaller screens */
+        padding: 20px; /* Reduce padding for smaller devices */
+    }
+
+    .timer-display {
+        font-size: 6rem; /* Smaller timer font for smaller screens */
+        height: 40vh; /* Reduce height on smaller screens */
+    }
+}
