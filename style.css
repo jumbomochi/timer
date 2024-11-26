@@ -11,6 +11,26 @@ body {
     padding: 0; /* Ensure no body padding affects centering */
 }
 
+/* General Label Styling (for Choose Mode and Custom Message) */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1rem; /* Consistent font size */
+    color: #555; /* Match color for all labels */
+    text-align: center; /* Align text to center for consistency */
+}
+
+/* Styling for Inputs (Duration, End Time, Custom Message) */
+input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 /* Container Styling */
 .container {
     text-align: center;
@@ -119,6 +139,7 @@ h1 {
     border-radius: 8px; /* Rounded corners */
     width: 100%; /* Full width for consistency */
     box-sizing: border-box;
+    text-align: center; /* Center-align text */
 }
 
 /* Button Styling */
